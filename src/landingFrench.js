@@ -6,7 +6,7 @@ import {
 } from "firebase/firestore";
 
 
-function LandingFrench() {
+function LandingFrench(props) {
     const [newEmail, setNewEmail] = useState("");
     const [users, setUsers] = useState(false);
     const usersCollectionRef = collection(db, "users");
@@ -22,7 +22,7 @@ function LandingFrench() {
             <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
-                        <a href="/">
+                        <a onClick={props.changeToEnglish}>
                             <img src="assets/images/englishLogo.png" width="50px" height="30px" alt=""/>
                         </a>
                     </div>
@@ -47,7 +47,7 @@ function LandingFrench() {
                                                                                                                        src="assets/images/white-instagram.png"/></a></li>
                                         <li><a href="https://twitter.com/curation_music" target="_blank"><img alt=""
                                                                                                               src="assets/images/white-twitter.png"/></a></li>
-                                        <li><a href="javascript:;"><img alt="" src="assets/images/discord.png"/></a></li>
+                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ"><img alt="" src="assets/images/spotify.png"/></a></li>
                                     </ul>
 
                                 </div>
