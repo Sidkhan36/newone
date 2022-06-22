@@ -1,4 +1,4 @@
-import  React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { db } from "./firebase-config";
 import {
     collection,
@@ -7,24 +7,27 @@ import {
 
 function LandingEnglish(props) {
 
-    const [newEmail, setNewEmail] = useState("");
-    const [users, setUsers] = useState(false);
 
-    const usersCollectionRef = collection(db, "users");
-    const createUser = async (event) => {
-        event.preventDefault()
-        console.log(newEmail)
-        await addDoc(usersCollectionRef, { email: newEmail });
-        setUsers(true)
-    };
+    // const [newName, setNewName] = useState("");
+    // const [newTitle, setNewTitle] = useState("");
+    // const [newEmail, setNewEmail] = useState("");
+    // const [users, setUsers] = useState(false);
+    //
+    // const usersCollectionRef = collection(db, "userData");
+    // const createUser = async (event) => {
+    //     event.preventDefault()
+    //     console.log(newEmail, newTitle, newName)
+    //     await addDoc(usersCollectionRef, { email: newEmail, name: newName, title:newTitle});
+    //     setUsers(true)
+    // };
     return (
         <>
             <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
-                        <a onClick={props.changeToFrench}>
-                            <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
-                        </a>
+                            <a onClick={props.changeToFrench}>
+                                <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
+                            </a>
                     </div>
                     <div className="container-fluid">
                         <div className="row">
@@ -57,7 +60,6 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <section id="project">
                     <div className="container">
                         <h3>The Project</h3>
@@ -89,7 +91,6 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <section id="mision">
                     <div className="container">
                         <div className="row">
@@ -108,7 +109,6 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <section id="experience">
                     <div className="container">
                         <div className="row">
@@ -137,7 +137,6 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <section id="song">
                     <div className="container">
                         <div className="row">
@@ -151,14 +150,12 @@ function LandingEnglish(props) {
                                     </div>
                                     <div className="col-md-6 col-6">
                                         <div className="sign-fld">
-                                            <form onSubmit={createUser}>
+                                            <form onSubmit={props.openEnglishForm}>
                                                 <div className="form-group">
-                                                    <input type="email" name="" onChange={(e) => {setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
+                                                    <input type="email" name="" onChange={(e) => {props.setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    {
-                                                        users ? <p style={{textAlign:"center"}}> RESPONSE SUBMITTED !</p> : <input type="submit" value="Share your song" id="sbmt-btn"/>
-                                                    }
+                                                    <input type="submit" value="Share your song" id="sbmt-btn"/>
                                                 </div>
                                             </form>
                                         </div>
@@ -202,10 +199,10 @@ function LandingEnglish(props) {
                             <h2>Join our community !</h2>
                             <form>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your full name"/>
+                                    <input type="text" placeholder="Enter your full name" onChange={(e)=>{props.setNewName(e.target.value)}}/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your e-mail adress"/>
+                                    <input type="text" placeholder="Enter your e-mail adress" onChange={(e)=>{props.setNewEmail(e.target.value)}}/>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />
@@ -236,7 +233,6 @@ function LandingEnglish(props) {
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </footer>

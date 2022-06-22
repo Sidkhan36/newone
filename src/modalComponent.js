@@ -12,35 +12,27 @@ const customStyles = {
     },
 };
 
-const ModalComponent = () => {
-    const [modalOpen, setModalOpen] = React.useState(false);
-    function openModal() {
-        setModalOpen(true);
-    }
+const ModalComponent = (props) => {
 
-
-
-    function closeModal() {
-        setModalOpen(false);
-    }
 return(
         <div>
-            <button onClick={openModal}>Open Modal</button>
+            <button onClick={props.openModal}>Open Modal</button>
             <Modal
-                isOpen={modalOpen}
+                isOpen={props.modalOpen}
                 // onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
+                onRequestClose={props.closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
+                <button onClick={props.closeModal}>close</button>
+                <form onSubmit={props.ModalSubmit}>
+                    <div >
+                        <input type="text" onChange={(event) => {props.setNewName(event.target.value)}} placeholder={props.artistName}/>
+                        <input type="text" onChange={(event) => {props.setNewTitle(event.target.value)}} placeholder={props.titleText}/>
+                    </div>
+                    <div >
+                         <input type="submit" value="Share your song" id="sbmt-btn"/>
+                    </div>
                 </form>
             </Modal>
         </div>
