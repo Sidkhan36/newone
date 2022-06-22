@@ -4,25 +4,40 @@ import {
     collection,
     addDoc,
 } from "firebase/firestore";
+import Form from "./form";
 
 
 function LandingFrench(props) {
+    const [openForm, setOpenForm] = useState(false);
+    const [newName, setNewName] = useState("");
+    const [newTitle, setNewTitle] = useState("");
     const [newEmail, setNewEmail] = useState("");
     const [users, setUsers] = useState(false);
-    const usersCollectionRef = collection(db, "users");
-
+    const usersCollectionRef = collection(db, "userData");
     const createUser = async (event) => {
         event.preventDefault()
-        console.log(newEmail)
-        await addDoc(usersCollectionRef, { email: newEmail });
+        console.log(newEmail, newTitle, newName)
+        await addDoc(usersCollectionRef, { email: newEmail, name: newName, title:newTitle});
         setUsers(true)
     };
+    const openFrench = () => {
+        setOpenForm(true)
+    }
     return (
         <>
-            <main className="main-div">
+            {openForm ? <Form
+                    createUser={createUser}
+                    setNewTitle={setNewTitle}
+                    setNewName={setNewName}
+                    artistPlaceHolder={"Nom de l’artiste"}
+                    titlePlaceHolder={"Titre"}
+                    users={users}
+                />
+                :
+                <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
-                        <a onClick={props.changeToEnglish}>
+                        <a onClick={props.changeToEnglish} href="#">
                             <img src="assets/images/englishLogo.png" width="50px" height="30px" alt=""/>
                         </a>
                     </div>
@@ -152,16 +167,12 @@ function LandingFrench(props) {
                             <div className="sec-04">
                                 <div className="row">
                                     <div className="col-md-6 col-6">
-
-
-
-
                                         <p><strong>Entrez votre email et proposez votre <br/> musique favorite.</strong> Si le son est validé, nous l’afficherons sur notre playlist
                                             <strong> Curation et vous receverez une dédicace sur instagram.</strong></p>
                                     </div>
                                     <div className="col-md-6 col-6">
                                         <div className="sign-fld">
-                                            <form onSubmit={createUser}>
+                                            <form onSubmit={openFrench}>
                                                 <div className="form-group">
                                                     <input type="email" name="" onChange={(e) => {setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
                                                 </div>
@@ -210,12 +221,12 @@ function LandingFrench(props) {
                     <div className="container">
                         <div className="join-community">
                             <h2>Join our community !</h2>
-                            <form>
+                            <form onSubmit={openFrench}>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your full name"/>
+                                    <input type="text"  placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your e-mail adress"/>
+                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />
@@ -249,7 +260,7 @@ function LandingFrench(props) {
                         </div>
                     </div>
                 </footer>
-            </main>
+            </main> }
         </>
     );
 }

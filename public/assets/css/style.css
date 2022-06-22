@@ -64,7 +64,11 @@ section#header-sec {
     overflow: hidden;
     position: relative;
 }
-
+.form-sec{
+    background: linear-gradient(90deg, rgba(255, 92, 1, 0.85) 0%, rgba(249, 212, 35, 0.82) 100%);
+    overflow: hidden;
+    height: 100vh;
+}
 .top-header h1 {
     font-style: normal;
     font-weight: 400;
@@ -643,7 +647,10 @@ ul.footer-links-inner02 li h5 {
     margin: 0 0 10px;
     font-size: 17px;
 }
+.curation-img{
 
+    margin-top: 90px;
+}
 .footer-logo {
     margin: 120px 0 0 0;
 }
@@ -690,6 +697,14 @@ section#header-sec {
     overflow: hidden;
     position: relative;
 }
+
+.curation-img{
+    text-align: center;
+    margin-top: 60px;
+    height: 30px;
+    width: 150px;
+}
+
 .top-header {
     padding: 10px 0 0;
     position: relative;
@@ -725,6 +740,10 @@ img.lady-pic {
     width: 180px;
     bottom: 0;
 }
+
+.language-flag {
+    position: unset;
+    }
 .top-header>img {
     width: 180px;
 }

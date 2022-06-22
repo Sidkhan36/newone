@@ -8,7 +8,7 @@ import {
 
 const Getdata = () => {
     const [users, setUsers] = React.useState([]);
-    const usersCollectionRef = collection(db, "users");
+    const usersCollectionRef = collection(db, "userData");
 
     React.useEffect(() => {
         const getUsers = async () => {
@@ -19,11 +19,12 @@ const Getdata = () => {
     }, []);
     return(
 
-        <table style={{textAlign:"center"}}>
+        <table>
             <thead>
             <tr>
-
-                <th>EMAILS</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +32,8 @@ const Getdata = () => {
                 users.map((user)=>{
                     return(
                         <tr key={user.id}>
+                            <td>{user.name}</td>
+                            <td>{user.title}</td>
                             <td>{user.email}</td>
                         </tr>
                     )

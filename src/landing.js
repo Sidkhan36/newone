@@ -4,30 +4,41 @@ import {
     collection,
     addDoc,
 } from "firebase/firestore";
+import Form from "./form";
 
 function LandingEnglish(props) {
-
-
-    // const [newName, setNewName] = useState("");
-    // const [newTitle, setNewTitle] = useState("");
-    // const [newEmail, setNewEmail] = useState("");
-    // const [users, setUsers] = useState(false);
-    //
-    // const usersCollectionRef = collection(db, "userData");
-    // const createUser = async (event) => {
-    //     event.preventDefault()
-    //     console.log(newEmail, newTitle, newName)
-    //     await addDoc(usersCollectionRef, { email: newEmail, name: newName, title:newTitle});
-    //     setUsers(true)
-    // };
+    const [openForm, setOpenForm] = useState(false);
+    const [newName, setNewName] = useState("");
+    const [newTitle, setNewTitle] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [users, setUsers] = useState(false);
+    const usersCollectionRef = collection(db, "userData");
+    const createUser = async (event) => {
+        event.preventDefault()
+        console.log(newEmail, newTitle, newName)
+        await addDoc(usersCollectionRef, { email: newEmail, name: newName, title:newTitle});
+        setUsers(true)
+    };
+    const openEnglish = () => {
+        setOpenForm(true)
+    }
     return (
         <>
-            <main className="main-div">
+            {openForm ? <Form
+                createUser={createUser}
+                setNewTitle={setNewTitle}
+                setNewName={setNewName}
+                artistPlaceHolder={"Artist"}
+                titlePlaceHolder={"Title"}
+                users={users}
+                    />
+                :
+                <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
-                            <a onClick={props.changeToFrench}>
-                                <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
-                            </a>
+                        <a onClick={props.changeToFrench} href="#">
+                            <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
+                        </a>
                     </div>
                     <div className="container-fluid">
                         <div className="row">
@@ -150,9 +161,9 @@ function LandingEnglish(props) {
                                     </div>
                                     <div className="col-md-6 col-6">
                                         <div className="sign-fld">
-                                            <form onSubmit={props.openEnglishForm}>
+                                            <form onSubmit={openEnglish}>
                                                 <div className="form-group">
-                                                    <input type="email" name="" onChange={(e) => {props.setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
+                                                    <input type="email" name="" onChange={(e) => {setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
                                                 </div>
                                                 <div className="form-group">
                                                     <input type="submit" value="Share your song" id="sbmt-btn"/>
@@ -166,7 +177,6 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <section id="center-circle">
                     <div className="container">
                         <div className="row">
@@ -192,17 +202,16 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </section>
-
                 <footer>
                     <div className="container">
                         <div className="join-community">
                             <h2>Join our community !</h2>
-                            <form>
+                            <form onSubmit={openEnglish}>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your full name" onChange={(e)=>{props.setNewName(e.target.value)}}/>
+                                    <input type="text"  placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" placeholder="Enter your e-mail adress" onChange={(e)=>{props.setNewEmail(e.target.value)}}/>
+                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />
@@ -236,7 +245,8 @@ function LandingEnglish(props) {
                         </div>
                     </div>
                 </footer>
-            </main>
+            </main>}
+
         </>
     );
 }
