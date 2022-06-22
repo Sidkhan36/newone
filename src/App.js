@@ -25,6 +25,11 @@ function App() {
     <>
       <main className="main-div">
         <section id="header-sec">
+          <div className="language-flag">
+            <a href="/french">
+              <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
+            </a>
+          </div>
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-7 col-8">
@@ -223,16 +228,16 @@ function App() {
               <div className="col-md-7 col-5">
                 <div className="fooer-links">
                   <ul className="footer-links-inner">
-                    <li><a href="javascript:;">FAQS</a></li>
-                    <li><a href="javascript:;">Contact Us</a></li>
+                    {/*<li><a href="javascript:;">FAQS</a></li>*/}
+                    {/*<li><a href="javascript:;">Contact Us</a></li>*/}
                   </ul>
 
                   <ul className="footer-links-inner02">
-                    <li><h5>Follow Us</h5></li>
+                    <li><h6>Follow Us/Contact Us</h6></li>
                     <li><a href="https://www.instagram.com/curationmusic_io/" target="_blank"><img alt=""
                                                                                                    src="assets/images/white-instagram.png"/></a></li>
                     <li><a href="https://twitter.com/curation_music" target="_blank"><img alt="" src="assets/images/white-twitter.png"/></a></li>
-                    <li><a href="javascript:;"><img alt="" src="assets/images/discord.png"/></a></li>
+                    <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ"><img alt="" src="assets/images/spotify.png"/></a></li>
                   </ul>
                 </div>
               </div>

@@ -598,9 +598,9 @@ ul.footer-links-inner {
 
 ul.footer-links-inner02 {
     clear: both;
-    width: 145px;
+    width: 200px;
     float: right;
-    text-align: right;
+    text-align: left;
     margin: 15px 0px 10px;
 }
 
@@ -634,6 +634,7 @@ ul.footer-links-inner02 li h5 {
     margin: 0 0 10px;
     font-size: 17px;
 }
+
 .footer-logo {
     margin: 120px 0 0 0;
 }
@@ -641,6 +642,7 @@ ul.footer-links-inner02 li h5 {
     width: 650px;
     position: relative;
 }
+
 section#mision ul li:hover {
     background: #000;
 }
@@ -1113,6 +1115,7 @@ section#center-circle {
     color: #FFFFFF;
     margin: 20px 0 0;
 }
+
 ul.footer-links-inner {
     width: 130px;
     float: right;
@@ -1122,6 +1125,7 @@ ul.footer-links-inner li a {
     color: #fff;
     font-size: 13px;
 }
+
 ul.footer-links-inner02 li img {
     width: 25px;
 }
@@ -1135,6 +1139,7 @@ ul.footer-links-inner02 {
 ul.footer-links-inner02 li h5 {
     font-size: 14px;
 }
+
 }
 
 
