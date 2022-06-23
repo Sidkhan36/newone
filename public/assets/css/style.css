@@ -6,7 +6,7 @@
 @import url('../css/slick.css');
 @import url('../css/mobile-nav.css');
 
-#jqcheck { background: #fff9d7; text-align: center; color: #333; padding: 10px 0px; font-size: 13px; font-weight: bold; position: fixed; z-index: 9991; width: 100%; font-family: Arial, Helvetica, sans-serif; }
+#jqcheck { background: #fff9d7; text-align: center; color: #333; padding: 10px 0px; font-size: 13px; font-weight: bold; position: fixed; z-index: 1; width: 100%; font-family: Arial, Helvetica, sans-serif; }
 * { margin: 0px; padding: 0px; }
 
 /* text selection color */
@@ -43,16 +43,16 @@ img { border: 0px; outline: none; }
 ul,li { list-style-type: none; margin:0px; padding: 0px; }
 .relative { position:relative; }
 a { text-decoration: none; }
-/* sliderxs 
+/* sliderxs
 ------------------------------------*/
 .sliderxs { }
 /* slick Dots .sliderxs slider */
 .sliderxs .slick-dots { position: absolute; bottom: 0px; right: 0px; left: 0px; display:
  block; padding: 0; margin: 0 auto; border-radius: 3px; list-style: none; text-align:center;  }
-.sliderxs .slick-dots li { position: relative; display: inline-block; margin: 0 6px 0 0; 
+.sliderxs .slick-dots li { position: relative; display: inline-block; margin: 0 6px 0 0;
 padding: 0; cursor: pointer; }
 .sliderxs .slick-dots li button { font-size: 0; line-height: 0; display: block;
-  width: 12px; height: 12px; padding: 0; cursor: pointer; color: transparent;  outline: none; 
+  width: 12px; height: 12px; padding: 0; cursor: pointer; color: transparent;  outline: none;
   background: #10171f; border:none; border-radius: 200px; }
 .sliderxs .slick-dots li.slick-active button { background: var(--primary-color); border:none; }
 .sliderxs .slick-dots li button:before { display:none; }
@@ -69,10 +69,13 @@ section#header-sec {
     overflow: hidden;
     height: 100vh;
 }
+.heading-mobile{
+    display: none;
+}
 .top-header h1 {
     font-style: normal;
     font-weight: 400;
-    font-size: 54px;
+    font-size: 46px;
     line-height: 70px;
 /* or 130% */
     text-transform: uppercase;
@@ -93,7 +96,7 @@ section#header-sec {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 49px;
 /* or 140% */
     color: #FFFFFF;
@@ -123,9 +126,11 @@ img.lady-pic {
     right: 0;
     width: 470px;
     bottom: 0;
+    z-index: 3;
 }
 
 img.slider-circle {
+    z-index: 2;
     width: 650px;
     position: relative;
     left: 14px;
@@ -404,7 +409,7 @@ section#song h4 {
     height: 45px;
     padding: 0 15px;
     width: 100%;
-    color: rgba(179, 179, 179, 0.36);
+    color: black;
     margin: 0 0 5px;
 }
 
@@ -579,7 +584,8 @@ footer {
     width: 75%;
     margin: 10px auto 0;
     padding: 0 10px;
-    color: #C4C4C4;
+    color: #131313;
+    text-align: center;
 }
 
 .join-community input::placeholder {
@@ -684,20 +690,83 @@ section#mision ul li:hover img {
 
 /********** Responsive **********/
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1366px) {
+    .heading-mobile{
+        display: none;
+    }
+    .top-header ul li img {
+        width: 25px;
+    }
+    .top-header ul {
+        padding: 60px 0 0;
+    }
+    .top-header>img {
+        width: 350px;
+    }
+    .top-header h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 38px;
+        /* or 130% */
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-family: 'Paytone One';
+        margin: 30px 0 0;
+        width: 80%;
+    }
+    .top-header p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        /* or 140% */
+        color: #FFFFFF;
+        padding: 25px 0 0;
+        width: 75%;
+    }
+    .top-header {
+        position: relative;
+        z-index: 999;
+    }
+    img.lady-pic {
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: 0;
+        z-index: 3;
+    }
+
+    img.slider-circle {
+        z-index: 2;
+        width: 450px;
+        position: relative;
+        left: 14px;
+        float: right;
+        animation: topmymov 5s infinite alternate;
+    }
 }
 @media only screen and (max-width: 1024px) {
+
 }
 @media only screen and (max-width: 991px) {
+
 }
 @media only screen and (max-width: 767px) {
+
 section#header-sec {
     background: linear-gradient(90deg, rgba(255, 92, 1, 0.85) 0%, rgba(249, 212, 35, 0.82) 100%);
     padding: 20px 0 0 0;
     overflow: hidden;
     position: relative;
 }
-
+.heading-desktop{
+    display: none;
+}
+.heading-mobile{
+    display: unset;
+}
 .curation-img{
     text-align: center;
     margin-top: 60px;
@@ -713,45 +782,53 @@ section#header-sec {
 .top-header h1 {
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     line-height: normal;
     text-transform: uppercase;
     color: #FFFFFF;
     font-family: 'Paytone One';
     margin: 14px 0 0;
+    width: 100%;
 }.top-header p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 10px;
     line-height: normal;
     color: #FFFFFF;
     padding: 12px 0 0;
+     width: 100%;
 }
 img.slider-circle {
-    width: 230px;
-    position: relative;
-    left: 14px;
+    width: 160px;
+    position: absolute;
+    left: -20px;
     float: right;
+    bottom: 0;
 }
 img.lady-pic {
     position: absolute;
     right: 0;
-    width: 180px;
+    width: 120px;
     bottom: 0;
 }
 
 .language-flag {
     position: unset;
     }
+img.language-anchor {
+
+}
+
 .top-header>img {
-    width: 180px;
+    width: 140px;
 }
 .top-header ul {
-    padding: 11px 0 0;
+    padding: 20px 0 0;
 }
 .top-header ul li img {
-    width: 25px;
+    width: 15px;
+    margin-bottom: 10px;
 }
 section#project h3 {
     font-size: 20px;
@@ -899,7 +976,7 @@ section#experience {
     font-size: 12px;
     line-height: 33px;
     color: #000000;
-    padding: 20px 0 40px;
+
 }
 section#mision ul li+li {
     margin: 0 -50px 0;
@@ -978,7 +1055,7 @@ section#song h4 {
     height: 35px;
     padding: 0 15px;
     width: 100%;
-    color: rgba(179, 179, 179, 0.36);
+    color: black;
     margin: 0 0 5px;
     font-size: 12px;
 }

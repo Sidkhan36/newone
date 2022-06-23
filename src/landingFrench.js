@@ -38,7 +38,7 @@ function LandingFrench(props) {
                 <section id="header-sec">
                     <div className="language-flag">
                         <a onClick={props.changeToEnglish} href="#">
-                            <img src="assets/images/englishLogo.png" width="50px" height="30px" alt=""/>
+                            <img src="assets/images/englishLogo.png" alt="" height="20px"/>
                         </a>
                     </div>
                     <div className="container-fluid">
@@ -48,13 +48,12 @@ function LandingFrench(props) {
                                     <img alt="" src="assets/images/logo.png"/>
                                     <h1>Vis une experience Unique
                                         avec ton artiste favori</h1>
-                                    <p>Fait parti de la communauté des CURATEURS en partageant
+                                    <p>Fais partie de la communauté des CURATEURS en partageant
                                         ta chanson favorite afin d’avoir l’opportunité d’apparaitre sur
                                         notre playlist.
-
                                     </p>
                                     <p>
-                                        Follow nous sur les réseau et profites de notre
+                                        Follow nous sur les réseaux et profite de notre
                                         curation quotidienne.
                                     </p>
                                     <ul>
@@ -85,18 +84,18 @@ function LandingFrench(props) {
                                 <div className="project-inner">
                                     <span><img alt="" src="assets/images/project01.png"/></span>
                                     <h2>Digital Collectible</h2>
-                                    <p>L’artiste<strong>partage</strong>sa création sous forme de NFT</p>
+                                    <p>L’artiste <strong>partage </strong>sa création sous forme de NFT</p>
                                 </div>
                             </div>
 
                             <div className=" col-md-4">
-                                <div className="project-inner" id="project-inner02">
-                                    <span><img alt="" src="assets/images/project02.png"/></span>
-                                    <h2> Le fan détient la propriété <br/>
-                                        de l’oeuvre</h2>
-                                    <p>Les fans sont propriétaires<strong>de 100 % du digital collectible</strong>  (Musique/Photo/Clip/Animation...)</p>
+                                    <div className="project-inner" id="project-inner02">
+                                        <span><img alt="" src="assets/images/project02.png"/></span>
+                                        <h2> Le fan détient la propriété <br/>
+                                            de l’oeuvre</h2>
+                                        <p>Les fans sont propriétaires de <strong> 100 % du digital collectible</strong>  (Musique/Photo/Clip/Animation...)</p>
 
-                                </div>
+                                    </div>
                             </div>
 
                             <div className=" col-md-4">
@@ -114,17 +113,28 @@ function LandingFrench(props) {
                 <section id="mision">
                     <div className="container">
                         <div className="row">
-                            <h2>Mission</h2>
+                            <h2 className="heading-desktop">Mission</h2>
+                            <h2 className="heading-mobile">NOTRE MISSION</h2>
                             <p>Curation aide les artistes à faire face à 3 problèmes</p>
                             <ul>
-                                <li><h6><strong>99%</strong> des artistes n’ont aucune rémunaration à travers le streaming</h6>
+                                <li>
+                                    <a href="#song">
+                                    <h6><strong>99%</strong> des artistes n’ont aucune rémunaration à travers le streaming</h6>
                                     <img alt="" src="assets/images/mission-icon01.png"/>
+                                </a>
                                 </li>
-                                <li><h6><span><strong>Les gros labels</strong> se font de l’argent sur le dos des petits artistes </span></h6>
-                                    <img alt="" src="assets/images/mission-icon03.png"/>
+                                <li>
+                                    <a href="#song">
+                                        <h6 className="heading-desktop"><span><strong>Les gros labels</strong> se font de l’argent sur le dos des petits artistes </span></h6>
+                                        <h6 className="heading-mobile">curation aide mes artistes à faire face à 3 problème</h6>
+                                        <img alt="" src="assets/images/mission-icon03.png"/>
+                                    </a>
                                 </li>
-                                <li><h6>Les projets<strong> Web 3</strong> musicaux sont centralisés</h6>
-                                    <img alt="" src="assets/images/mission-icon02.png"/></li>
+                                <li>
+                                    <a href="#song">
+                                        <h6>Les projets<strong> Web 3</strong> musicaux sont centralisés</h6>
+                                        <img alt="" src="assets/images/mission-icon02.png"/></a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -195,10 +205,12 @@ function LandingFrench(props) {
                     <div className="container">
                         <div className="row">
                             <div className="center-circle">
-                                <p>To have a chance to be displayed <span>in our playlist Curation Music,</span> enter you mail and
-                                    share with<span> us your favorite song </span>
+                                <p>Pour avoir la chance <span>d’apparaitre sur notre playlist Curation Music, </span>
+                                    <span>entrez votre email et partagez</span> <span>votre son</span>
                                 </p>
-                                <h5>The artist:</h5>
+
+
+                                <h5>L’artiste doit:</h5>
                             </div>
 
                             <div className="circle01">
@@ -226,7 +238,7 @@ function LandingFrench(props) {
                                     <input type="text"  placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your full name"/>
+                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your e-mail address"/>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />

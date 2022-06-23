@@ -37,7 +37,7 @@ function LandingEnglish(props) {
                 <section id="header-sec">
                     <div className="language-flag">
                         <a onClick={props.changeToFrench} href="#">
-                            <img src="assets/images/frenchLogo.png" width="50px" height="30px" alt=""/>
+                            <img src="assets/images/frenchLogo.png" height="20px" alt=""/>
                         </a>
                     </div>
                     <div className="container-fluid">
@@ -211,7 +211,7 @@ function LandingEnglish(props) {
                                     <input type="text"  placeholder="Enter your full name"/>
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your full name"/>
+                                    <input type="email" onChange={(e)=>{setNewEmail(e.target.value)}} placeholder="Enter your e-mail address"/>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />
