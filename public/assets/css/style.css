@@ -629,7 +629,7 @@ ul.footer-links-inner li a {
 
 ul.footer-links-inner02 li {
     display: block;
-    margin: 0 15px 0 0;
+    margin: 0 5px 0 0;
     color: #fff;
     text-align: left;
 }
@@ -748,10 +748,118 @@ section#mision ul li:hover img {
     }
 }
 @media only screen and (max-width: 1024px) {
+    .heading-mobile{
+        display: none;
+    }
+    .top-header ul li img {
+        width: 25px;
+    }
+    .top-header ul {
+        padding: 60px 0 0;
+    }
+    .top-header>img {
+        width: 350px;
+    }
+    .top-header h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 38px;
+        /* or 130% */
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-family: 'Paytone One';
+        margin: 30px 0 0;
+        width: 80%;
+    }
+    .top-header p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        /* or 140% */
+        color: #FFFFFF;
+        padding: 25px 0 0;
+        width: 75%;
+    }
+    .top-header {
+        position: relative;
+        z-index: 999;
+    }
+    img.lady-pic {
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: 0;
+        z-index: 3;
+    }
 
+    img.slider-circle {
+        z-index: 2;
+        width: 450px;
+        position: relative;
+        left: 14px;
+        float: right;
+        animation: topmymov 5s infinite alternate;
+    }
 }
 @media only screen and (max-width: 991px) {
+    .heading-mobile{
+        display: none;
+    }
+    .top-header ul li img {
+        width: 25px;
+    }
+    .top-header ul {
+        padding: 60px 0 0;
+    }
+    .top-header>img {
+        width: 350px;
+    }
+    .top-header h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 38px;
+        /* or 130% */
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-family: 'Paytone One';
+        margin: 30px 0 0;
+        width: 80%;
+    }
+    .top-header p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        /* or 140% */
+        color: #FFFFFF;
+        padding: 25px 0 0;
+        width: 75%;
+    }
+    .top-header {
+        position: relative;
+        z-index: 999;
+    }
+    img.lady-pic {
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: 0;
+        z-index: 3;
+    }
 
+    img.slider-circle {
+        z-index: 2;
+        width: 450px;
+        position: relative;
+        left: 14px;
+        float: right;
+        animation: topmymov 5s infinite alternate;
+    }
 }
 @media only screen and (max-width: 767px) {
 
@@ -796,8 +904,8 @@ section#header-sec {
     font-size: 10px;
     line-height: normal;
     color: #FFFFFF;
-    padding: 12px 0 0;
      width: 100%;
+
 }
 img.slider-circle {
     width: 160px;
@@ -824,11 +932,12 @@ img.language-anchor {
     width: 140px;
 }
 .top-header ul {
-    padding: 20px 0 0;
+    padding: 20px 10px 0;
 }
 .top-header ul li img {
     width: 15px;
     margin-bottom: 10px;
+    margin-left: -9px;
 }
 section#project h3 {
     font-size: 20px;
@@ -976,6 +1085,7 @@ section#experience {
     font-size: 12px;
     line-height: 33px;
     color: #000000;
+    padding: 20px 0 40px;
 
 }
 section#mision ul li+li {
@@ -1029,15 +1139,15 @@ section#song h4 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 41px;
-    letter-spacing: 0;
     color: #000000;
     text-align: center;
+    margin-top: 5px;
 }
 .sec-04 {
     padding: 10px 20px 10px;
-    margin: 40px 15px 0;
+    margin: 15px 15px 0;
 }
 .sec-04 p {
     font-family: 'Roboto';
@@ -1208,15 +1318,15 @@ section#center-circle {
     border-radius: 10px;
 }
 .footer-logo img {
-    width: 190px;
+    width: 150px;
 }
 .footer-logo {
     margin: 0;
 }
 .footer-logo p {
     font-style: normal;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 10px;
+    line-height: 15px;
     color: #FFFFFF;
     margin: 20px 0 0;
 }
@@ -1232,19 +1342,28 @@ ul.footer-links-inner li a {
 }
 
 ul.footer-links-inner02 li img {
-    width: 25px;
+    width: 20px;
 }
+    ul.footer-links-inner02 li a {
+        margin-left: 20px;
+    }
 ul.footer-links-inner02 {
     clear: both;
-    width: 130px;
+    width: 170px;
     float: right;
-    text-align: right;
-    margin: 15px 0px 10px;
+    margin: 50px -40px 5px;
 }
 ul.footer-links-inner02 li h5 {
-    font-size: 14px;
+    font-size: 12px;
 }
+    ul.footer-links-inner02 li {
+        display: block;
+        margin: 0 -12px 0 0;
+        color: #fff;
+        text-align: left;
+    }
 
 }
+
 
 

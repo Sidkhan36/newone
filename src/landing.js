@@ -31,13 +31,15 @@ function LandingEnglish(props) {
                 artistPlaceHolder={"Artist"}
                 titlePlaceHolder={"Title"}
                 users={users}
+                setOpenForm={setOpenForm}
                     />
                 :
                 <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
                         <a onClick={props.changeToFrench} href="#">
-                            <img src="assets/images/frenchLogo.png" height="20px" alt=""/>
+                            <img src="assets/images/frenchLogo.png" height="20px" className="heading-desktop" alt=""/>
+                            <img src="assets/images/frenchLogo.png" height="10px" className="heading-mobile" style={{marginRight:"10px"}} alt=""/>
                         </a>
                     </div>
                     <div className="container-fluid">
@@ -50,14 +52,14 @@ function LandingEnglish(props) {
                                         favorite song and get the opportunity to be displayed in our playlist.
                                     </p>
                                     <p>
-                                        Follow us to enjoy our daily curation.
+                                        Follow us on our social media to enjoy our daily curation
                                     </p>
                                     <ul>
                                         <li><a href="https://www.instagram.com/curationmusic_io/" target="_blank"><img alt=""
                                                                                                                        src="assets/images/white-instagram.png"/></a></li>
                                         <li><a href="https://twitter.com/curation_music" target="_blank"><img alt=""
                                                                                                               src="assets/images/white-twitter.png"/></a></li>
-                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ"><img alt="" src="assets/images/spotify.png"/></a></li>
+                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ" target="_blank"><img alt="" src="assets/images/spotify.png"/></a></li>
                                     </ul>
 
                                 </div>
@@ -79,7 +81,7 @@ function LandingEnglish(props) {
                                 <div className="project-inner">
                                     <span><img alt="" src="assets/images/project01.png"/></span>
                                     <h2>Digital Collectible</h2>
-                                    <p>Artists share the <strong>creation</strong> that he wants under NFT format. </p>
+                                    <p>Artists <strong>share</strong> the creation that he wants under NFT format. </p>
                                 </div>
                             </div>
 
@@ -87,39 +89,43 @@ function LandingEnglish(props) {
                                 <div className="project-inner" id="project-inner02">
                                     <span><img alt="" src="assets/images/project02.png"/></span>
                                     <h2> Fans own property<br/>of the asset</h2>
-                                    <p>Fans <strong>own 100 % of the digital collectible</strong> (Music/Picture/Clip/Animation...)</p>
+                                    <p>Fans own <strong>100 % of the digital collectible</strong> (Music/Picture/Clip/Animation...)</p>
                                 </div>
                             </div>
 
                             <div className=" col-md-4">
                                 <div className="project-inner">
                                     <span><img alt="" src="assets/images/project03.png"/></span>
-                                    <h2>Digital Collectible</h2>
-                                    <p>Thanks to the digital collectible, fans get the right to <strong>live a crazy
-                                        experience</strong> with the favorite artist</p>
+                                    <h2>Fans live an experience <br/>with his favorite artist
+                                    </h2>
+                                    <p>Thanks to the digital collectible, fans get the right to live a crazy experience with <strong>the favorite artist</strong>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section id="mision">
-                    <div className="container">
-                        <div className="row">
-                            <h2>Mission</h2>
-                            <p>Curation will help artists to cope with 3 issues they face</p>
-                            <ul>
-                                <li><h6>99% of artists <strong>don’t</strong><span>make money with</span>streaming</h6>
-                                    <img alt="" src="assets/images/mission-icon01.png"/>
-                                </li>
-                                <li><h6>Big labels <span><strong>get rich</strong> off the artist</span></h6>
-                                    <img alt="" src="assets/images/mission-icon03.png"/>
-                                </li>
-                                <li><h6><strong>Web 3</strong> musical<span>projects are centralized</span></h6>
-                                    <img alt="" src="assets/images/mission-icon02.png"/></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                    <a href="#song">
+                        <section id="mision">
+                            <div className="container">
+                                <div className="row">
+                                    <h2 className="heading-desktop">Mission</h2>
+                                    <h2 className="heading-mobile">Our Mission</h2>
+                                    <p>Curation will help artists to cope with 3 issues they face</p>
+                                    <ul>
+                                        <li><h6>99% of artists <strong>don’t</strong><span>make money with</span>streaming</h6>
+                                            <img alt="" src="assets/images/mission-icon01.png"/>
+                                        </li>
+                                        <li><h6>Big labels <span><strong>get rich</strong> off the artist</span></h6>
+                                            <img alt="" src="assets/images/mission-icon03.png"/>
+                                        </li>
+                                        <li><h6><strong>Web 3</strong> musical<span>projects are centralized</span></h6>
+                                            <img alt="" src="assets/images/mission-icon02.png"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </a>
                 <section id="experience">
                     <div className="container">
                         <div className="row">
@@ -135,7 +141,7 @@ function LandingEnglish(props) {
                                             <li>Get a life ticket for shows</li>
                                             <li>Collectors clothes</li>
                                             <li>Events in the metaverse</li>
-                                            <li>Etc.</li>
+                                            <span className="heading-desktop"><li>Etc.</li></span>
                                         </ul>
                                     </div>
                                 </div>
@@ -234,11 +240,11 @@ function LandingEnglish(props) {
                                     </ul>
 
                                     <ul className="footer-links-inner02">
-                                        <li><h6>Follow Us/Contact Us</h6></li>
+                                        <li><h5>Follow Us/Contact Us</h5></li>
                                         <li><a href="https://www.instagram.com/curationmusic_io/" target="_blank"><img alt=""
                                                                                                                        src="assets/images/white-instagram.png"/></a></li>
                                         <li><a href="https://twitter.com/curation_music" target="_blank"><img alt="" src="assets/images/white-twitter.png"/></a></li>
-                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ"><img alt="" src="assets/images/spotify.png"/></a></li>
+                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ" target="_blank"><img alt="" src="assets/images/spotify.png"/></a></li>
                                     </ul>
                                 </div>
                             </div>

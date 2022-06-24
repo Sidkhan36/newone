@@ -32,13 +32,15 @@ function LandingFrench(props) {
                     artistPlaceHolder={"Nom de l’artiste"}
                     titlePlaceHolder={"Titre"}
                     users={users}
+                    setOpenForm={setOpenForm}
                 />
                 :
                 <main className="main-div">
                 <section id="header-sec">
                     <div className="language-flag">
                         <a onClick={props.changeToEnglish} href="#">
-                            <img src="assets/images/englishLogo.png" alt="" height="20px"/>
+                            <img src="assets/images/englishLogo.png" height="20px" className="heading-desktop" alt=""/>
+                            <img src="assets/images/englishLogo.png" height="10px" className="heading-mobile" style={{marginRight:"10px"}} alt=""/>
                         </a>
                     </div>
                     <div className="container-fluid">
@@ -111,11 +113,12 @@ function LandingFrench(props) {
                 </section>
 
                 <section id="mision">
+                    <a href="#song">
                     <div className="container">
                         <div className="row">
                             <h2 className="heading-desktop">Mission</h2>
                             <h2 className="heading-mobile">NOTRE MISSION</h2>
-                            <p>Curation aide les artistes à faire face à 3 problèmes</p>
+                            <p>Curation aide les artistes à faire face à 3 problèmes </p>
                             <ul>
                                 <li>
                                     <a href="#song">
@@ -126,7 +129,7 @@ function LandingFrench(props) {
                                 <li>
                                     <a href="#song">
                                         <h6 className="heading-desktop"><span><strong>Les gros labels</strong> se font de l’argent sur le dos des petits artistes </span></h6>
-                                        <h6 className="heading-mobile">curation aide mes artistes à faire face à 3 problème</h6>
+                                        <h6 className="heading-mobile">curation aide mes artistes à faire face à 3 problème <br/></h6>
                                         <img alt="" src="assets/images/mission-icon03.png"/>
                                     </a>
                                 </li>
@@ -134,10 +137,10 @@ function LandingFrench(props) {
                                     <a href="#song">
                                         <h6>Les projets<strong> Web 3</strong> musicaux sont centralisés</h6>
                                         <img alt="" src="assets/images/mission-icon02.png"/></a></li>
-
                             </ul>
                         </div>
                     </div>
+                    </a>
                 </section>
 
                 <section id="experience">
@@ -177,7 +180,7 @@ function LandingFrench(props) {
                             <div className="sec-04">
                                 <div className="row">
                                     <div className="col-md-6 col-6">
-                                        <p><strong>Entrez votre email et proposez votre <br/> musique favorite.</strong> Si le son est validé, nous l’afficherons sur notre playlist
+                                        <p><strong>Entrez votre email et proposez votre <span className="heading-desktop"> <br/></span> musique favorite.</strong><span className="heading-mobile"><br/></span> Si le son est validé, nous l’afficherons sur notre playlist
                                             <strong> Curation et vous receverez une dédicace sur instagram.</strong></p>
                                     </div>
                                     <div className="col-md-6 col-6">
@@ -187,9 +190,7 @@ function LandingFrench(props) {
                                                     <input type="email" name="" onChange={(e) => {setNewEmail(e.target.value)} }  placeholder="Enter your mail"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    {
-                                                        users ? <p style={{textAlign:"center"}}> RESPONSE SUBMITTED !</p> : <input type="submit" value="Share your song" id="sbmt-btn"/>
-                                                    }
+                                                    <input type="submit" value="Share your song" id="sbmt-btn"/>
                                                 </div>
                                             </form>
                                         </div>
@@ -223,7 +224,7 @@ function LandingFrench(props) {
                             </div>
                             <div className="circle03">
                                 <img alt="" src="assets/images/music.png"/>
-                                <p>Ne pas avoir signer dans un gros label comme Universal/Sony</p>
+                                <p>Faire de la bonne musique</p>
                             </div>
                         </div>
                     </div>
@@ -261,10 +262,10 @@ function LandingFrench(props) {
 
                                     <ul className="footer-links-inner02">
                                         <li><h5>Follow Us/Contact Us</h5></li>
-                                        <li><a href="https://www.instagram.com/curationmusic_io/" target="_blank"><img alt=""
-                                                                                                                       src="assets/images/white-instagram.png"/></a></li>
-                                        <li><a href="https://twitter.com/curation_music" target="_blank"><img alt="" src="assets/images/white-twitter.png"/></a></li>
-                                        <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ"><img alt="" src="assets/images/spotify.png"/></a></li>
+                                            <li><a href="https://www.instagram.com/curationmusic_io/" target="_blank"><img alt=""
+                                                                                                                           src="assets/images/white-instagram.png"/></a></li>
+                                            <li><a href="https://twitter.com/curation_music" target="_blank"><img alt="" src="assets/images/white-twitter.png"/></a></li>
+                                            <li><a href="https://open.spotify.com/playlist/0XhMerRi06aHN6ReYZSTqU?si=KTpTXLXWTbSaMEjeUBkHsQ" target="_blank" ><img alt="" src="assets/images/spotify.png"/></a></li>
                                     </ul>
                                 </div>
                             </div>

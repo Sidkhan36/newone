@@ -4,8 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GetData from "./getData";
-import LandingFrench from "./landingFrench";
-import LandingEnglish from "./landing";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +11,6 @@ root.render(
       <BrowserRouter>
           <Routes>
               <Route path="/" element={ <App/> }/>
-              {/*<Route path="/french" element={ <LandingFrench /> }/>*/}
               <Route path="data" element={<GetData/>} />
           </Routes>
       </BrowserRouter>
